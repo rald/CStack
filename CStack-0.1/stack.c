@@ -55,3 +55,16 @@ void Stack_Clear(Stack_Node** top,void(*Stack_Data_Free)(void* data)) {
 		free(node);
 	}
 }
+
+
+
+void Stack_Print(Stack_Node** top,void(*Print_Data)(void* data)) {
+	Stack_Node* iter=(*top);
+	bool first=true;
+	while(iter) {
+		if(first) first=false; else printf(", ");
+		Print_Data(iter->data);
+		iter=iter->next;
+	}
+	printf("\n");
+}
