@@ -30,7 +30,6 @@ void Free_Data_Int(void* data) {
 
 int main() {
 	Stack_Node* stack=NULL;
-	Stack_Node* node=NULL;
 
 	(void)Stack_Push(&stack,WrapInt(4));
 	(void)Stack_Push(&stack,WrapInt(4));
