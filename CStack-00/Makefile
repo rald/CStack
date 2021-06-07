@@ -1,4 +1,4 @@
-all: libstack.a game
+all: libstack.a test
 
 libstack.a:	stack.o
 	ar rcs libstack.a stack.o
@@ -6,9 +6,9 @@ libstack.a:	stack.o
 stack.o: stack.c stack.h
 	gcc -c stack.c -o stack.o
 
-game: main.c
-	gcc main.c -o game -I. -L. -lstack
+test: test.c
+	gcc test.c -o test -I. -L. -lstack
 
 clean:
-	rm stack.o libstack.a game
+	rm stack.o libstack.a test
 

@@ -2,7 +2,7 @@
 
 
 
-Stack_Node* Stack_Push(Stack_Node** top,int data) {
+Stack_Node* Stack_Push(Stack_Node** top,void* data) {
 	Stack_Node* node=malloc(sizeof(*node));
 	if(!node) {
 		printf("Error: stack overflow\n");
@@ -42,4 +42,16 @@ Stack_Node* Stack_Peek(Stack_Node** top) {
 	else
 		printf("Error: stack is empty\n");
 	return NULL;
+}
+
+
+
+void Stack_Clear(Stack_Node** top,void(*Stack_Data_Free)(void* data)) {
+	while(!Stack_IsEmpty(top)) {
+		Stack_Node* node=(*top);
+		(*top)=(*top)->next;
+		node->next=NULL;
+		Stack_Data_Free(node->data);
+		free(node);
+	}
 }
