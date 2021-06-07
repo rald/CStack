@@ -19,5 +19,6 @@ bool Stack_IsEmpty(Stack_Node** top);
 Stack_Node* Stack_Peek(Stack_Node** top);
 void Stack_Clear(Stack_Node** top,void(*Stack_Data_Free)(void* data));
 void Stack_Print(Stack_Node** top,void(*Stack_Print_Data)(void* data));
+size_t Stack_Length(Stack_Node** top);
 
 #endif

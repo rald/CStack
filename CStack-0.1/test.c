@@ -31,11 +31,11 @@ void Free_Data_Int(void* data) {
 int main() {
 	Stack_Node* stack=NULL;
 
-	(void)Stack_Push(&stack,WrapInt(4));
-	(void)Stack_Push(&stack,WrapInt(4));
-	(void)Stack_Push(&stack,WrapInt(3));
-	(void)Stack_Push(&stack,WrapInt(4));
-	(void)Stack_Push(&stack,WrapInt(1));
+	Stack_Push(&stack,WrapInt(4));
+	Stack_Push(&stack,WrapInt(4));
+	Stack_Push(&stack,WrapInt(3));
+	Stack_Push(&stack,WrapInt(4));
+	Stack_Push(&stack,WrapInt(1));
 
 	Stack_Print(&stack,Print_Data_Int);
 

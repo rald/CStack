@@ -58,6 +58,8 @@ void Stack_Clear(Stack_Node** top,void(*Stack_Data_Free)(void* data)) {
 
 
 
+
+
 void Stack_Print(Stack_Node** top,void(*Print_Data)(void* data)) {
 	Stack_Node* iter=(*top);
 	bool first=true;
@@ -67,4 +69,15 @@ void Stack_Print(Stack_Node** top,void(*Print_Data)(void* data)) {
 		iter=iter->next;
 	}
 	printf("\n");
+}
+
+
+size_t Stack_Length(Stack_Node** top) {
+	Stack_Node* iter=(*top);
+	size_t n=0;
+	while(iter) {
+		n++;
+		iter=iter->next;
+	}
+	return n;
 }
